@@ -1,0 +1,23 @@
+services:
+  fallcompass-api:
+    build: .
+    container_name: fallcompass-api
+    restart: unless-stopped
+    ports:
+      - "8790:8790"
+    environment:
+      - PORT=8790
+      - HOST=0.0.0.0
+      # - FALLCOMPASS_AUTH_TOKEN=change-me
+      # - FALLCOMPASS_ANTHROPIC_KEY=sk-ant-...
+      # - FALLCOMPASS_OPENAI_KEY=sk-...
+      # - FALLCOMPASS_GEMINI_KEY=AIza...
+      # - FALLCOMPASS_OPENROUTER_KEY=sk-or-...
+      # - FALLCOMPASS_MISTRAL_KEY=...
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8790/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,48 @@
+{
+  "name": "@ai-native-solutions/fallcompass-api",
+  "version": "1.0.0",
+  "description": "HTTP wrapper for the fallcompass sovereign LLM cascade. Express + Docker. Language-agnostic.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "fallcompass-api": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "Dockerfile",
+    "docker-compose.yml"
+  ],
+  "keywords": [
+    "llm",
+    "cascade",
+    "http-api",
+    "express",
+    "byok",
+    "anthropic",
+    "openai",
+    "ollama",
+    "sovereign"
+  ],
+  "author": "AI Native Solutions <hello@ai-nativesolutions.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjgant80-hub/fallcompass-api.git"
+  },
+  "homepage": "https://github.com/sjgant80-hub/fallcompass-api",
+  "dependencies": {
+    "@ai-native-solutions/fallcompass-sdk": "^1.0.0",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
