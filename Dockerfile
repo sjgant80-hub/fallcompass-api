@@ -1,8 +1,8 @@
 FROM node:20-alpine
 WORKDIR /app
 COPY package.json ./
-RUN npm install --omit=dev --no-audit --no-fund
+RUN npm install --omit=dev
 COPY src ./src
-EXPOSE 8790
-ENV NODE_ENV=production
+USER node
+EXPOSE 3000
 CMD ["node", "src/index.js"]
